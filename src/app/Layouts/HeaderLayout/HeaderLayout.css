@@ -1,0 +1,25 @@
+.header-layout {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+}
+.header-layout .content {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.header-layout .content .right-col {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  float: right;
+  margin: auto 5rem auto auto;
+}
+.header-layout .content .right-col h3 {
+  color: white;
+  mix-blend-mode: difference;
+}/*# sourceMappingURL=HeaderLayout.css.map */
