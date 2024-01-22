@@ -18,14 +18,7 @@ import {
   Stage,
   useGLTF,
 } from "@react-three/drei";
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableColumn,
-  TableRow,
-  TableCell,
-} from "@nextui-org/react";
+import { Html } from "@react-three/drei";
 
 let dirLight: any;
 let modelRef: any;
@@ -550,7 +543,13 @@ const HomeScreen: React.FC<any> = () => {
               enableRotate={false}
             />
 
-            <Suspense fallback={null}>
+            <Suspense
+              fallback={
+                <Html>
+                  <h1>heeeee</h1>
+                </Html>
+              }
+            >
               <Stage intensity={0.6} castShadow={false} environment={null}>
                 <Model scale={1.8} />
               </Stage>
