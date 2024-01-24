@@ -1,0 +1,73 @@
+.about-page {
+    width: 100%;
+    height: fit-content;
+    color: white;
+    padding-top: 10rem;
+    
+    .content {
+      width: 100%;
+       
+      .hero {
+       position: relative;
+       margin-top: 1rem;
+       padding-left: 2rem;
+       
+        .quote {
+          width: fit-content;  
+          text-align: right;
+          justify-content: end;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin-top: 4rem;
+          margin-left: 5rem;
+        //   background-color: green;
+          p {
+            width: 420px;
+            color: white;
+            font-weight: 600;
+            text-align: right;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+          }
+
+          .auth {
+            // background-color: blue;
+            width: fit-content;
+            margin-right: 1rem;
+        }
+       }
+
+       .hero-text {
+        //   width: 250x;
+        font-size: 3rem;
+        margin-left: 5rem;
+
+        h1 {
+            text-align: left;
+            width: 800px;
+            font-size: 6rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+       }
+
+       .image-wrapper {
+        position: absolute;
+        right: 12rem;
+        top: -2rem;
+        transform: rotate(15deg);
+          .img {
+            z-index: -1;
+            object-fit: cover;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+          }
+       }
+      }
+    }
+}
+
+body {
+    background: black;
+}

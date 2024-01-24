@@ -1,0 +1,66 @@
+.about-page {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
+  padding-top: 10rem;
+}
+.about-page .content {
+  width: 100%;
+}
+.about-page .content .hero {
+  position: relative;
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+.about-page .content .hero .quote {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: right;
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 4rem;
+  margin-left: 5rem;
+}
+.about-page .content .hero .quote p {
+  width: 420px;
+  color: white;
+  font-weight: 600;
+  text-align: right;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.about-page .content .hero .quote .auth {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 1rem;
+}
+.about-page .content .hero .hero-text {
+  font-size: 3rem;
+  margin-left: 5rem;
+}
+.about-page .content .hero .hero-text h1 {
+  text-align: left;
+  width: 800px;
+  font-size: 6rem;
+  font-weight: 500;
+  z-index: 2;
+}
+.about-page .content .hero .image-wrapper {
+  position: absolute;
+  right: 12rem;
+  top: -2rem;
+  transform: rotate(15deg);
+}
+.about-page .content .hero .image-wrapper .img {
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover; /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+body {
+  background: black;
+}/*# sourceMappingURL=AboutPageScreen.css.map */
