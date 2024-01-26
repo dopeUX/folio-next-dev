@@ -14,7 +14,7 @@ const SplashScreen: React.FC<any> = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      updateImages();
+      // updateImages();
     }, 1500);
     // updateImages();
   }, []);
@@ -39,9 +39,9 @@ const SplashScreen: React.FC<any> = () => {
   }
 
   useLayoutEffect(() => {
-    gsapAction();
+    // gsapAction();
     setTimeout(() => {
-      router.push("/home");
+      // router.push("/home");
     }, 8200);
   }, []);
 
@@ -106,6 +106,15 @@ const SplashScreen: React.FC<any> = () => {
             <div className="overlay2"></div>
             <div className="overlay"></div>
 
+            <Image
+              ref={splashImgRef}
+              className="img"
+              width={500}
+              height={600}
+              // unoptimized
+              src={`/assets/splashImages/image${currentImage}.jpg`}
+              alt=""
+            />
             <Image
               ref={splashImgRef}
               className="img"

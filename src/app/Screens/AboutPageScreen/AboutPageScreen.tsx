@@ -215,8 +215,8 @@ const AboutPageScreen: React.FC<any> = () => {
 
             <div className="reach-links">
               <p>shreyashfz05@gmail.com</p>
-              <p>shreyashfz05@gmail.com</p>
-              <p>shreyashfz05@gmail.com</p>
+              <p>linkedin.com/shreyash-fulzele</p>
+              <p>github.com/dopeUX</p>
             </div>
           </div>
         </section>

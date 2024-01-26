@@ -301,6 +301,8 @@ const HomeScreen: React.FC<any> = () => {
     });
   };
 
+  const handleLoadedVideo = () => {};
+
   return (
     <div className="home-screen">
       {/* <div className="overlay-top"></div>
@@ -324,6 +326,7 @@ const HomeScreen: React.FC<any> = () => {
               className={`player`}
               autoPlay
               loop
+              onLoadedData={handleLoadedVideo}
               muted
             >
               <source src="/assets/hero-gif.mp4" type="video/mp4"></source>
@@ -526,6 +529,11 @@ const HomeScreen: React.FC<any> = () => {
               color={0x6b69fa}
               intensity={3}
             />
+            <directionalLight
+              position={[-10, 5, -20]}
+              color={0x6b69fa}
+              intensity={3}
+            />
             {
               <pointLight
                 ref={dirLight}
@@ -543,13 +551,7 @@ const HomeScreen: React.FC<any> = () => {
               enableRotate={false}
             />
 
-            <Suspense
-              fallback={
-                <Html>
-                  <h1>heeeee</h1>
-                </Html>
-              }
-            >
+            <Suspense>
               <Stage intensity={0.6} castShadow={false} environment={null}>
                 <Model scale={1.8} />
               </Stage>
