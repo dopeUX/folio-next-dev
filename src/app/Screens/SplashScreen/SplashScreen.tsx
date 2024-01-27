@@ -10,6 +10,8 @@ const SplashScreen: React.FC<any> = () => {
   const splashImgRef: any = useRef();
   const splashText1 = "Bichess-Lie,";
   const splashText2 = "Compilers-Downt";
+  const [imageLoadCount, setImageLoadCount] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -18,6 +20,21 @@ const SplashScreen: React.FC<any> = () => {
     }, 1500);
     // updateImages();
   }, []);
+
+  useEffect(() => {
+    if (imageLoadCount === 5) {
+      setImagesLoaded(true);
+      gsapAction();
+      setTimeout(() => {
+        updateImages();
+      }, 1500);
+
+      setTimeout(() => {
+        router.push("/home");
+      }, 8200);
+    }
+    console.log(imageLoadCount, "iiiiii");
+  }, [imageLoadCount]);
 
   function updateImages() {
     let int = 1;
@@ -115,13 +132,73 @@ const SplashScreen: React.FC<any> = () => {
               src={`/assets/splashImages/image${currentImage}.jpg`}
               alt=""
             />
+
+            {/* test images */}
             <Image
-              ref={splashImgRef}
-              className="img"
-              width={500}
-              height={600}
-              // unoptimized
-              src={`/assets/splashImages/image${currentImage}.jpg`}
+              // ref={splashImgRef}
+              // className="img"
+              width={0}
+              height={0}
+              unoptimized
+              // style={{ display: "none" }}
+              onLoad={() => {
+                console.log("iiiiiiii333333333");
+                setImageLoadCount((pre) => pre + 1);
+              }}
+              src={`/assets/splashImages/image${1}.jpg`}
+              alt=""
+            />
+            <Image
+              // ref={splashImgRef}
+              // className="img"
+              width={0}
+              height={0}
+              unoptimized
+              // style={{ display: "none" }}
+              onLoad={() => {
+                setImageLoadCount((pre) => pre + 1);
+              }}
+              src={`/assets/splashImages/image${2}.jpg`}
+              alt=""
+            />
+            <Image
+              // ref={splashImgRef}
+              // className="img"
+              width={0}
+              height={0}
+              unoptimized
+              // style={{ display: "none" }}
+              onLoad={() => {
+                setImageLoadCount((pre) => pre + 1);
+              }}
+              src={`/assets/splashImages/image${3}.jpg`}
+              alt=""
+            />
+            <Image
+              // ref={splashImgRef}
+              // className="img"
+              width={0}
+              height={0}
+              unoptimized
+              // style={{ display: "none" }}
+              onLoad={() => {
+                console.log("iiiiiiii2222");
+                setImageLoadCount((pre) => pre + 1);
+              }}
+              src={`/assets/splashImages/image${4}.jpg`}
+              alt=""
+            />
+            <Image
+              // ref={splashImgRef}
+              // className="img"
+              width={0}
+              height={0}
+              unoptimized
+              // style={{ display: "none" }}
+              onLoad={() => {
+                setImageLoadCount((pre) => pre + 1);
+              }}
+              src={`/assets/splashImages/image${5}.jpg`}
               alt=""
             />
           </div>

@@ -261,6 +261,7 @@
 }
 .home-screen .content .three-model canvas {
   width: 100%;
+  overflow: hidden;
   background: transparent;
   height: -moz-fit-content;
   height: fit-content;
