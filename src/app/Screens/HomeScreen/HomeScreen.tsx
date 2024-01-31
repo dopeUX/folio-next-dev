@@ -29,40 +29,40 @@ function Model(props: any) {
   //   // camera.lookAt(0, 0, 0);
   // });
   const { scene } = useGLTF("/assets/scene2.glb");
-  // const { camera } = useThree();
+  const { camera } = useThree();
 
-  // const updateLightPosition = (x: any, y: any) => {
-  //   if (dirLight) {
-  //     gsap.to(dirLight.current.position, {
-  //       x: x,
-  //       y: y,
-  //       z: 2,
-  //       duration: 0.1,
-  //       ease: "power2.inOut",
-  //     });
-  //   }
-  // };
+  const updateLightPosition = (x: any, y: any) => {
+    if (dirLight) {
+      gsap.to(dirLight.current.position, {
+        x: x,
+        y: y,
+        z: 2,
+        duration: 0.1,
+        ease: "power2.inOut",
+      });
+    }
+  };
 
-  // const updateModelPosition = (x: any) => {
-  //   const moveDistance = 0.2; // Adjust the distance as needed
-  //   const targetX = x > 0 ? -moveDistance : moveDistance;
+  const updateModelPosition = (x: any) => {
+    const moveDistance = 0.2; // Adjust the distance as needed
+    const targetX = x > 0 ? -moveDistance : moveDistance;
 
-  //   gsap.to(modelRef.current.position, {
-  //     x: targetX,
-  //     duration: 0.2,
-  //     ease: "power2.inOut",
-  //   });
-  // };
-  // useFrame(({ mouse }) => {
-  //   // Update camera position based on mouse (for OrbitControls)
-  //   // camera.position.x += (mouse.x * 5 - camera.position.x) * 0.05;
-  //   // camera.position.y += (-mouse.y * 5 - camera.position.y) * 0.05;
-  //   // camera.position.y = mouse.y;
-  //   // camera.position.x;
-  //   camera.lookAt(0, 0, 0);
-  //   updateLightPosition(mouse.x, mouse.y);
-  //   updateModelPosition(mouse.x);
-  // });
+    gsap.to(modelRef.current.position, {
+      x: targetX,
+      duration: 0.2,
+      ease: "power2.inOut",
+    });
+  };
+  useFrame(({ mouse }) => {
+    // Update camera position based on mouse (for OrbitControls)
+    // camera.position.x += (mouse.x * 5 - camera.position.x) * 0.05;
+    // camera.position.y += (-mouse.y * 5 - camera.position.y) * 0.05;
+    // camera.position.y = mouse.y;
+    // camera.position.x;
+    camera.lookAt(0, 0, 0);
+    updateLightPosition(mouse.x, mouse.y);
+    updateModelPosition(mouse.x);
+  });
 
   return (
     <primitive className="model" ref={modelRef} object={scene} {...props} />
