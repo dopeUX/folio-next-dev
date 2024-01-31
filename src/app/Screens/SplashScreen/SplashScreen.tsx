@@ -139,7 +139,7 @@ const SplashScreen: React.FC<any> = () => {
               // className="img"
               width={0}
               height={0}
-              unoptimized
+              // unoptimized
               // style={{ display: "none" }}
               onLoad={() => {
                 console.log("iiiiiiii333333333");
@@ -153,7 +153,7 @@ const SplashScreen: React.FC<any> = () => {
               // className="img"
               width={0}
               height={0}
-              unoptimized
+              // unoptimized
               // style={{ display: "none" }}
               onLoad={() => {
                 setImageLoadCount((pre) => pre + 1);
@@ -166,7 +166,7 @@ const SplashScreen: React.FC<any> = () => {
               // className="img"
               width={0}
               height={0}
-              unoptimized
+              // unoptimized
               // style={{ display: "none" }}
               onLoad={() => {
                 setImageLoadCount((pre) => pre + 1);
@@ -179,7 +179,7 @@ const SplashScreen: React.FC<any> = () => {
               // className="img"
               width={0}
               height={0}
-              unoptimized
+              // unoptimized
               // style={{ display: "none" }}
               onLoad={() => {
                 console.log("iiiiiiii2222");
@@ -193,7 +193,7 @@ const SplashScreen: React.FC<any> = () => {
               // className="img"
               width={0}
               height={0}
-              unoptimized
+              // unoptimized
               // style={{ display: "none" }}
               onLoad={() => {
                 setImageLoadCount((pre) => pre + 1);
