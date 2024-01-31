@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Splash } from "next/font/google";
-import "../app/globalStyles/globalStyles.css";
+import "../app/GlobalStyles/globalStyles.scss";
 import localFont from "@next/font/local";
 import ReduxProvider from "./ReduxStore/Provider";
 import AppLayout from "./Layouts/AppLayout/AppLayout";
