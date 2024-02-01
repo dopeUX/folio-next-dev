@@ -104,6 +104,8 @@
            .all-tech {
             font-size: 1.5rem;
             margin-top: .5rem;
+            height: fit-content;
+            transform: scale(1, -1);
             // margin: 0rem auto auto 0rem
           
           }
@@ -181,6 +183,7 @@
             h2{
               width:fit-content;
               font-size: 2rem;
+              transform: scale(1, -1);
             }
 
             p{
@@ -295,6 +298,7 @@
 
          .text2 {
           margin: 1rem auto auto 10rem;
+          // transform: scale(1,-1);
          }
          
          .image-wrapper {

@@ -100,6 +100,9 @@
 .home-screen .content .welcome-section .tech .all-tech {
   font-size: 1.5rem;
   margin-top: 0.5rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  transform: scale(1, -1);
 }
 .home-screen .content .welcome-section .tech .tech-desc-div {
   display: block;
@@ -169,6 +172,7 @@
   width: -moz-fit-content;
   width: fit-content;
   font-size: 2rem;
+  transform: scale(1, -1);
 }
 .home-screen .content .works-section .works .left-col p {
   margin-top: 10rem;

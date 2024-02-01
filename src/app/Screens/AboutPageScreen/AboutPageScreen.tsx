@@ -10,8 +10,8 @@ const AboutPageScreen: React.FC<any> = () => {
   const bottomHeroText1: string = "BBBoutique-experiences-that-are";
   const bottomHeroText2: string = "holistic,-intentional,-and-express";
   const bottomHeroText3: string = "the-heart-of-your-brand";
-  const heroText1: string = "Programmer-Just";
-  const heroText2: string = "For-Fun,-Dattebayo!";
+  const heroText1: string = "Not Another";
+  const heroText2: string = "Average Developer!";
   const aboutText: string =
     " Experienced freelancer with over three years of expertise in mobile and web development. Specialized in Android and Flutter mobile app development and MERN stack web development.";
   const aboutText2: string =

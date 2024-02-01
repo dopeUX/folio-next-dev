@@ -449,10 +449,20 @@ const HomeScreen: React.FC<any> = () => {
 
         <section className="three-model" onMouseMove={handleMouseMove}>
           <div className="overlay-back">
-            <h1 className="text1" data-scroll data-scroll-speed="0.05">
+            <h1
+              className="text1"
+              data-scroll
+              data-scroll-speed="0.1"
+              data-scroll-direction="horizontal"
+            >
               Vamosss
             </h1>
-            <h1 className="text2" data-scroll data-scroll-speed="0.05">
+            <h1
+              className="text2"
+              data-scroll
+              data-scroll-speed="0.1"
+              data-scroll-direction="horizontal"
+            >
               Guntosss
             </h1>
 
