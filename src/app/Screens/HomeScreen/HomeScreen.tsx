@@ -449,8 +449,11 @@ const HomeScreen: React.FC<any> = () => {
 
         <section className="three-model" onMouseMove={handleMouseMove}>
           <div className="overlay-back">
-            <h1 data-scroll data-scroll-speed="0.1">
-              siiiiuuuuuuuuuu
+            <h1 className="text1" data-scroll data-scroll-speed="0.05">
+              Vamosss
+            </h1>
+            <h1 className="text2" data-scroll data-scroll-speed="0.05">
+              Guntosss
             </h1>
 
             <div className="image-wrapper">
@@ -458,7 +461,7 @@ const HomeScreen: React.FC<any> = () => {
                 className="overlay-img"
                 alt=""
                 unoptimized
-                src={"/assets/splashImages/image1.jpg"}
+                src={"/assets/splashImages/image5.jpg"}
                 width={400}
                 height={500}
                 data-scroll

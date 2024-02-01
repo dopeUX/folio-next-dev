@@ -274,7 +274,9 @@
          position: absolute;
          top: 50%;
          left: 50%;
-         display: flex;
+         padding: 1rem 4rem;
+         box-sizing: border-box;
+         display: block;
          align-items: center;
          justify-content: center;
          transform: translate(-50%, -50%);
@@ -287,11 +289,18 @@
           color: white;
           mix-blend-mode: difference;
          }
+         .text1 {
+          margin: 4rem 10rem auto auto;
+         }
+
+         .text2 {
+          margin: 1rem auto auto 10rem;
+         }
          
          .image-wrapper {
           width: 400px;
-          height: 500px;
-          right: 4rem;
+          height: 600px;
+          right: 8rem;
           top: -2rem;
           overflow: hidden;
           white-space: nowrap;
@@ -306,16 +315,16 @@
          }
          .image-wrapper2 {
           width: 400px;
-          height: 500px;
-          left: 4rem;
+          height: 600px;
+          left: 8rem;
           bottom: -4rem;
           overflow: hidden;
           white-space: nowrap;
           position: absolute;
           z-index: -1;
            .overlay-img {
-             width: 120%;
-             height: 120%;
+             width: 140%;
+             height: 140%;
              object-fit: cover;
              
           }
