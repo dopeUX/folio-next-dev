@@ -5,10 +5,10 @@ import "./AppLayout.css";
 const AppLayout: React.FC<any> = ({ children }) => {
   const appRef: any = useRef();
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
-    })();
+    // (async () => {
+    //   const LocomotiveScroll = (await import("locomotive-scroll")).default;
+    //   const locomotiveScroll = new LocomotiveScroll();
+    // })();
   }, []);
   return (
     <div className="app-layout" ref={appRef} data-scroll-container>

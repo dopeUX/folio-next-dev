@@ -85,6 +85,14 @@ const AboutPageScreen: React.FC<any> = () => {
       window.removeEventListener("scroll", () => {});
     };
   });
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
+
   return (
     <div className="about-page">
       <HeaderLayout />

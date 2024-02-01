@@ -258,6 +258,39 @@
   font-size: 10rem;
   margin: auto;
   color: white;
+  mix-blend-mode: difference;
+}
+.home-screen .content .three-model .overlay-back .image-wrapper {
+  width: 400px;
+  height: 500px;
+  right: 4rem;
+  top: -2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  z-index: -1;
+}
+.home-screen .content .three-model .overlay-back .image-wrapper .overlay-img {
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-screen .content .three-model .overlay-back .image-wrapper2 {
+  width: 400px;
+  height: 500px;
+  left: 4rem;
+  bottom: -4rem;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  z-index: -1;
+}
+.home-screen .content .three-model .overlay-back .image-wrapper2 .overlay-img {
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .home-screen .content .three-model canvas {
   width: 100%;

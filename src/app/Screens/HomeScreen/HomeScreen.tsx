@@ -11,69 +11,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeaderLayout from "@/app/Layouts/HeaderLayout/HeaderLayout";
 import workData from "@/app/Constants/projectData";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {
-  OrbitControls,
-  PresentationControls,
-  Stage,
-  useGLTF,
-} from "@react-three/drei";
-import { Html } from "@react-three/drei";
-
-let dirLight: any;
-let modelRef: any;
-function Model(props: any) {
-  // useThree(({ camera }) => {
-  //   camera.position.y = 0;
-  //   camera.position.x = 3;
-  //   // camera.lookAt(0, 0, 0);
-  // });
-  const { scene } = useGLTF("/assets/scene2.glb");
-  const { camera } = useThree();
-
-  const updateLightPosition = (x: any, y: any) => {
-    if (dirLight) {
-      gsap.to(dirLight.current.position, {
-        x: x,
-        y: y,
-        z: 2,
-        duration: 0.1,
-        ease: "power2.inOut",
-      });
-    }
-  };
-
-  const updateModelPosition = (x: any) => {
-    const moveDistance = 0.2; // Adjust the distance as needed
-    const targetX = x > 0 ? -moveDistance : moveDistance;
-
-    gsap.to(modelRef.current.position, {
-      x: targetX,
-      duration: 0.2,
-      ease: "power2.inOut",
-    });
-  };
-  useFrame(({ mouse }) => {
-    // Update camera position based on mouse (for OrbitControls)
-    // camera.position.x += (mouse.x * 5 - camera.position.x) * 0.05;
-    // camera.position.y += (-mouse.y * 5 - camera.position.y) * 0.05;
-    // camera.position.y = mouse.y;
-    // camera.position.x;
-    camera.lookAt(0, 0, 0);
-    updateLightPosition(mouse.x, mouse.y);
-    updateModelPosition(mouse.x);
-  });
-
-  return (
-    <primitive className="model" ref={modelRef} object={scene} {...props} />
-  );
-}
-
-const handleMouseDown = (event: any) => {
-  if (event.button === 0) {
-    event.stopPropagation();
-  }
-};
+import Image from "next/image";
 
 const HomeScreen: React.FC<any> = () => {
   const heroText1: string = "Embark-On-A";
@@ -91,8 +29,6 @@ const HomeScreen: React.FC<any> = () => {
   const [isInsideProjectList, setIsInsideProjectList] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 10, y: 0 });
   const boundary: number = 200;
-  dirLight = useRef(null);
-  modelRef = useRef(null);
   const techDesc1: string =
     "As a skilled MERN stack developer, I embark on a journey to bring ideas to life and transform digital landscapes.";
   const techDesc2: string =
@@ -127,7 +63,12 @@ const HomeScreen: React.FC<any> = () => {
   useLayoutEffect(() => {
     gsapAction();
   }, []);
-
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   useLayoutEffect(() => {
     const height = listRef.current.offsetHeight;
     indicatorRef.current.style.height = height + 8 + "px";
@@ -511,62 +452,32 @@ const HomeScreen: React.FC<any> = () => {
             <h1 data-scroll data-scroll-speed="0.1">
               siiiiuuuuuuuuuu
             </h1>
-          </div>
-          <Canvas
-            // camera={{ position: [-5, 2, 10], fov: 60 }}
-            className="canvas"
-            dpr={[1, 2]}
-            // flat
-            // linear
-            // shadows
-            camera={{ fov: 70 }}
-            style={{ position: "absolute" }}
-            onPointerDown={handleMouseDown}
-          >
-            <color args={["#00000000"]} />
-            {/* <directionalLight
-              position={[-10, 0, -20]}
-              color={0x6b69fa}
-              intensity={3}
-            /> */}
-            {/* <directionalLight
-              position={[-10, 5, -20]}
-              color={0x6b69fa}
-              intensity={3}
-            /> */}
-            {
-              <pointLight
-                ref={dirLight}
-                position={[0, 0, 0]}
-                color={0xe64c4c}
-                intensity={5}
+
+            <div className="image-wrapper">
+              <Image
+                className="overlay-img"
+                alt=""
+                unoptimized
+                src={"/assets/splashImages/image1.jpg"}
+                width={400}
+                height={500}
+                data-scroll
+                data-scroll-speed="0.25"
               />
-            }
-            <OrbitControls
-              enabled={true}
-              enableZoom={false}
-              autoRotate={false}
-              rotateSpeed={1.5}
-              enablePan={false}
-              enableRotate={false}
-            />
-
-            <Suspense>
-              <Stage intensity={0.6} castShadow={false} environment={null}>
-                <Model scale={1.8} />
-              </Stage>
-            </Suspense>
-          </Canvas>
-
-          <div
-            className="light-wrapper"
-            onMouseEnter={() => {
-              // setLight(true);
-            }}
-            onMouseLeave={() => {
-              // setLight(false);
-            }}
-          ></div>
+            </div>
+            <div className="image-wrapper2">
+              <Image
+                className="overlay-img"
+                alt=""
+                unoptimized
+                src={"/assets/splashImages/image3.jpg"}
+                width={400}
+                height={500}
+                data-scroll
+                data-scroll-speed="0.25"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="bottom-section">

@@ -285,6 +285,40 @@
           font-size: 10rem;
           margin: auto;
           color: white;
+          mix-blend-mode: difference;
+         }
+         
+         .image-wrapper {
+          width: 400px;
+          height: 500px;
+          right: 4rem;
+          top: -2rem;
+          overflow: hidden;
+          white-space: nowrap;
+          position: absolute;
+          z-index: -1;
+           .overlay-img {
+             width: 120%;
+             height: 120%;
+             object-fit: cover;
+             
+          }
+         }
+         .image-wrapper2 {
+          width: 400px;
+          height: 500px;
+          left: 4rem;
+          bottom: -4rem;
+          overflow: hidden;
+          white-space: nowrap;
+          position: absolute;
+          z-index: -1;
+           .overlay-img {
+             width: 120%;
+             height: 120%;
+             object-fit: cover;
+             
+          }
          }
        }
         canvas {
@@ -296,7 +330,7 @@
          height: fit-content;
         //  transform: scale(2.0);
         }
- 
+        
         .light-wrapper {
          width: 500px;
          height: 500px;
