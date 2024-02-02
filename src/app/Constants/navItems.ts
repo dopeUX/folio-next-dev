@@ -7,18 +7,13 @@ export interface navItemsProps {
 const navItems: navItemsProps[] = [
   {
     id:0,
-    title:'Work.',
-    route:'/work'
+    title:'index, ',
+    route:'/home'
   },
   {
     id:1,
-    title:'About.',
-    route:'/work'
-  },
-  {
-    id:2,
-    title:'Reach.',
-    route:'/work'
+    title:'bout',
+    route:'/bout'
   },
 ]
 

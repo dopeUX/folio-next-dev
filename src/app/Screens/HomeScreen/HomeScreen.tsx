@@ -12,6 +12,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeaderLayout from "@/app/Layouts/HeaderLayout/HeaderLayout";
 import workData from "@/app/Constants/projectData";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/ReduxStore/store";
 
 const HomeScreen: React.FC<any> = () => {
   const heroText1: string = "Embark-On-A";
@@ -29,6 +31,9 @@ const HomeScreen: React.FC<any> = () => {
   const [isInsideProjectList, setIsInsideProjectList] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 10, y: 0 });
   const boundary: number = 200;
+  const startRouteChange = useSelector((state: RootState) => {
+    return state.AppReducer.startRouteChange;
+  });
   const techDesc1: string =
     "As a skilled MERN stack developer, I embark on a journey to bring ideas to life and transform digital landscapes.";
   const techDesc2: string =
@@ -64,6 +69,15 @@ const HomeScreen: React.FC<any> = () => {
     gsapAction();
   }, []);
   useEffect(() => {
+    if (startRouteChange) {
+      gsap.to(".home-screen", {
+        opacity: 0,
+        ease: "power4.out",
+        duration: 1.3,
+      });
+    }
+  }, [startRouteChange]);
+  useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll();
@@ -71,7 +85,7 @@ const HomeScreen: React.FC<any> = () => {
   }, []);
   useLayoutEffect(() => {
     const height = listRef.current.offsetHeight;
-    indicatorRef.current.style.height = height + 8 + "px";
+    indicatorRef.current.style.height = height + "px";
     console.log("yyyyy", height);
   }, []);
 
@@ -439,6 +453,23 @@ const HomeScreen: React.FC<any> = () => {
                       {index !== workData.length - 1 && (
                         <div className="divider"></div>
                       )}
+
+                      <div className="action-btns">
+                        <Image
+                          className="image"
+                          width={30}
+                          height={30}
+                          alt=""
+                          src={"/assets/github-white.svg"}
+                        />
+                        <Image
+                          className="image"
+                          width={30}
+                          height={30}
+                          alt=""
+                          src={"/assets/link-white.svg"}
+                        />
+                      </div>
                     </li>
                   );
                 })}
@@ -451,19 +482,19 @@ const HomeScreen: React.FC<any> = () => {
           <div className="overlay-back">
             <h1
               className="text1"
-              data-scroll
-              data-scroll-speed="0.1"
-              data-scroll-direction="horizontal"
+              // data-scroll
+              // data-scroll-speed="0.1"
+              // data-scroll-direction="horizontal"
             >
-              Vamosss
+              <span>V</span>amosss
             </h1>
             <h1
               className="text2"
-              data-scroll
-              data-scroll-speed="0.1"
-              data-scroll-direction="horizontal"
+              // data-scroll
+              // data-scroll-speed="0.1"
+              // data-scroll-direction="horizontal"
             >
-              Guntosss
+              <span>G</span>untosss
             </h1>
 
             <div className="image-wrapper">

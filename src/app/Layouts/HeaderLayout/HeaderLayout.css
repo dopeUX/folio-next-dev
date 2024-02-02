@@ -22,4 +22,6 @@
 .header-layout .content .right-col h3 {
   color: white;
   mix-blend-mode: difference;
+  cursor: pointer;
+  margin-left: 1rem;
 }/*# sourceMappingURL=HeaderLayout.css.map */
