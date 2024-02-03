@@ -257,7 +257,7 @@
   position: relative;
   width: 100%;
   height: 600px;
-  z-index: 16;
+  z-index: 1;
 }
 .home-screen .content .three-model .overlay-back {
   width: 100%;
