@@ -40,19 +40,18 @@ const HomeScreen: React.FC<any> = () => {
     "With a passion for crafting seamless experiences, I specialize in leveraging the power of MongoDB, Express.js, React, and Node.js to build dynamic, scalable, and intuitive web solutions.";
 
   useEffect(() => {
+    const rightBound = boundary * 2;
     window.addEventListener("mousemove", (e) => {
-      if (e.clientX > boundary && e.clientX < screen.width - boundary) {
+      if (e.clientX > boundary && e.clientX < screen.width - rightBound) {
         moveGIF(e.clientX);
       }
     });
 
     window.addEventListener("scroll", (e: any) => {
-      console.log(window.scrollY, worksSecRef.current.offsetTop, "kkkkkkkkkk");
       if (
         window.scrollY < 5 ||
         window.scrollY >= worksSecRef.current.offsetTop + 350
       ) {
-        console.log("iiiiiiiiiiiiiiiiii");
         updateBg("black");
       } else {
         updateBg("white");
@@ -86,7 +85,6 @@ const HomeScreen: React.FC<any> = () => {
   useLayoutEffect(() => {
     const height = listRef.current.offsetHeight;
     indicatorRef.current.style.height = height + "px";
-    console.log("yyyyy", height);
   }, []);
 
   function updateBg(col: string) {
@@ -243,7 +241,6 @@ const HomeScreen: React.FC<any> = () => {
 
   const calculateMarginTop = (index: number) => {
     const marginTop = listRef.current.offsetHeight * (index - 1);
-    console.log(marginTop, listRef.current.style.offsetHeight, "wwwwwwww");
     return marginTop + "px";
   };
   const handleMouseMove = (e: any) => {
